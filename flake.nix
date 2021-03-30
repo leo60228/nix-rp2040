@@ -3,8 +3,10 @@
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   inputs.pico-sdk = {
-    url = "github:raspberrypi/pico-sdk?ref=1.1.0";
     flake = false;
+    url = "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.0";
+    type = "git";
+    submodules = true;
   };
 
   outputs = { nixpkgs, flake-utils, pico-sdk, ... }:
