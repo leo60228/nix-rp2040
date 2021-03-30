@@ -1,0 +1,27 @@
+From 3b24055fe35ad7c259ea43cbbc9b0f4019ec1b88 Mon Sep 17 00:00:00 2001
+From: Sandeep Mistry <sandeep.mistry@arm.com>
+Date: Tue, 23 Mar 2021 13:04:42 -0400
+Subject: [PATCH] Correct flash defines for Adafruit Feather RP2040
+
+---
+ src/boards/include/boards/adafruit_feather_rp2040.h | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/boards/include/boards/adafruit_feather_rp2040.h b/src/boards/include/boards/adafruit_feather_rp2040.h
+index 631c52d..173bee4 100644
+--- a/src/boards/include/boards/adafruit_feather_rp2040.h
++++ b/src/boards/include/boards/adafruit_feather_rp2040.h
+@@ -69,11 +69,11 @@
+ 
+ //------------- FLASH -------------//
+ #ifndef PICO_FLASH_SPI_CLKDIV
+-#define PICO_FLASH_SPI_CLKDIV 2
++#define PICO_FLASH_SPI_CLKDIV 4
+ #endif
+ 
+ #ifndef PICO_FLASH_SIZE_BYTES
+-#define PICO_FLASH_SIZE_BYTES (4 * 1024 * 1024)
++#define PICO_FLASH_SIZE_BYTES (8 * 1024 * 1024)
+ #endif
+ 
+ // All boards have B1 RP2040

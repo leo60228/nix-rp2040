@@ -21,12 +21,14 @@
 
             src = pico-sdk;
 
+            patches = [ ./0001-Correct-flash-defines-for-Adafruit-Feather-RP2040.patch ];
+
             dontConfigure = true;
             dontBuild = true;
 
             installPhase = ''
             mkdir -p $out/share
-            cp -r $src $out/share/pico-sdk
+            cp -r . $out/share/pico-sdk
             '';
 
             setupHook = writeText "setup-hook" ''
