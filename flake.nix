@@ -4,7 +4,7 @@
 
   inputs.pico-sdk = {
     flake = false;
-    url = "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.0";
+    url = "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.2";
     type = "git";
     submodules = true;
   };
@@ -17,11 +17,9 @@
         packages = {
           pico-sdk = with pkgs; stdenv.mkDerivation {
             pname = "pico-sdk";
-            version = "1.1.0";
+            version = "1.1.2";
 
             src = pico-sdk;
-
-            patches = [ ./0001-Correct-flash-defines-for-Adafruit-Feather-RP2040.patch ];
 
             dontConfigure = true;
             dontBuild = true;

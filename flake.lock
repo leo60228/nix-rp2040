@@ -34,19 +34,19 @@
     "pico-sdk": {
       "flake": false,
       "locked": {
-        "lastModified": 1614957114,
-        "narHash": "sha256-O8X73GXc98d8To5s46EWjTka7QcG37hT/I2kivZSgZ0=",
+        "lastModified": 1617801438,
+        "narHash": "sha256-HRNKgaX3UWtlpNiaIDFO3Kpf1i+AXac+62AJ4lypILk=",
         "ref": "master",
-        "rev": "fc10a97c386f65c1a44c68684fe52a56aaf50df0",
-        "revCount": 262,
+        "rev": "afc10f3599c27147a6f34781b7102d86f58aa5f6",
+        "revCount": 287,
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.0"
+        "url": "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.2"
       },
       "original": {
         "submodules": true,
         "type": "git",
-        "url": "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.0"
+        "url": "https://github.com/raspberrypi/pico-sdk.git?ref=1.1.2"
       }
     },
     "root": {
