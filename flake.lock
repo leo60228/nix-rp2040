@@ -68,12 +68,29 @@
         "type": "github"
       }
     },
+    "picotool": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1624548475,
+        "narHash": "sha256-/gXR9HGcQ7PvgzBFdkJpuj9wC9Vk2BZ5m/iVHZbDCUk=",
+        "owner": "raspberrypi",
+        "repo": "picotool",
+        "rev": "62873e14e8a4ef3608635077be4c04b4e2fdf50f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "raspberrypi",
+        "repo": "picotool",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
         "openocd": "openocd",
         "pico-sdk": "pico-sdk",
+        "picotool": "picotool",
         "tinyusb": "tinyusb"
       }
     },

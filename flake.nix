@@ -21,7 +21,12 @@
     shallow = true;
   };
 
-  outputs = { nixpkgs, flake-utils, pico-sdk, tinyusb, openocd, ... }:
+  inputs.picotool = {
+    flake = false;
+    url = "github:raspberrypi/picotool";
+  };
+
+  outputs = { nixpkgs, flake-utils, pico-sdk, tinyusb, openocd, picotool, ... }:
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
@@ -65,6 +70,21 @@
 
             nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [ autoreconfHook269 ];
           });
+
+          picotool = with pkgs; stdenv.mkDerivation {
+            pname = "picotool";
+            version = "1.0.1";
+
+            src = picotool;
+
+            nativeBuildInputs = [ cmake pkgconfig ];
+            buildInputs = [ packages.pico-sdk libusb ];
+
+            installPhase = ''
+            mkdir -p $out/bin
+            cp picotool $out/bin
+            '';
+          };
         };
       }
     );
