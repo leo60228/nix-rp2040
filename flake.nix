@@ -57,7 +57,7 @@
             '';
           };
 
-          openocd = with pkgs; pkgs.openocd.overrideAttrs (oldAttrs: {
+          openocd-rp2040 = with pkgs; pkgs.openocd.overrideAttrs (oldAttrs: {
             pname = "openocd-rp2040";
             version = makeIso8601 openocd.lastModifiedDate;
 
