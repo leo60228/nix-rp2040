@@ -31,6 +31,26 @@
         "type": "github"
       }
     },
+    "openocd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1626277910,
+        "narHash": "sha256-9v2t4YbPjuROoxm9v8w4U+cmf09y8L5lM7w7nqEx1/4=",
+        "ref": "master+swd+rp2040+picoprobe",
+        "rev": "0628da71e112cd5fed0659590ddd54ed1df23a98",
+        "shallow": true,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/raspberrypi/openocd.git"
+      },
+      "original": {
+        "ref": "master+swd+rp2040+picoprobe",
+        "shallow": true,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/raspberrypi/openocd.git"
+      }
+    },
     "pico-sdk": {
       "flake": false,
       "locked": {
@@ -52,6 +72,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
+        "openocd": "openocd",
         "pico-sdk": "pico-sdk",
         "tinyusb": "tinyusb"
       }
