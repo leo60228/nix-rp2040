@@ -32,6 +32,17 @@ stdenv.mkDerivation (finalAttrs: {
           NIX_PREFETCH_GIT_CHECKOUT_HOOK = "git -C $out submodule update --init --depth=1; find $out -name .git -print0 | xargs -0 rm -rf";
         });
 
+  pioUsbSrc =
+    if minimal then
+      null
+    else
+      fetchFromGitHub {
+        owner = "sekigon-gonnoc";
+        repo = "Pico-PIO-USB";
+        rev = "7902e9fa8ed4a271d8d1d5e7e50516c2292b7bc2";
+        hash = "sha256-Rc0vH1FEvdkGaqUL4jaFnieMsGHDWQWaPJI99ZAEvCU=";
+      };
+
   nativeBuildInputs = [ cmake ];
   propagatedBuildInputs = [ picotool ];
 
@@ -44,6 +55,12 @@ stdenv.mkDerivation (finalAttrs: {
     mkdir -p $out/lib/pico-sdk
     cp -a ../../../* $out/lib/pico-sdk/
     chmod 755 $out/lib/pico-sdk/tools/pioasm/build/pioasm
+    ${lib.optionalString (!minimal) ''
+      chmod a+w $out/lib/pico-sdk/lib/tinyusb/hw/mcu
+      mkdir $out/lib/pico-sdk/lib/tinyusb/hw/mcu/raspberry_pi
+      cp -a $pioUsbSrc $out/lib/pico-sdk/lib/tinyusb/hw/mcu/raspberry_pi/Pico-PIO-USB
+      chmod a-w $out/lib/pico-sdk/lib/tinyusb/hw/mcu
+    ''}
     runHook postInstall
   '';
 
