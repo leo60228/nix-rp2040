@@ -20,8 +20,8 @@
           shell =
             {
               mkShell,
-              pkgsCross,
               cmake,
+              gcc-arm-embedded,
               pico-sdk,
               picotool,
               segger-jlink-headless,
@@ -29,17 +29,9 @@
             mkShell {
               packages = [
                 cmake
-                pkgsCross.arm-embedded.stdenv.cc
+                gcc-arm-embedded
                 pico-sdk
                 picotool
-              ];
-
-              hardeningDisable = [
-                "format"
-                "stackprotector"
-                "pic"
-                "relro"
-                "zerocallusedregs"
               ];
             };
         in
@@ -55,7 +47,7 @@
     // {
       overlays.default = final: prev: {
         rp2040Packages = final.callPackage ./scope.nix { };
-        inherit (final.rp2040Packages) pico-sdk picotool;
+        inherit (final.rp2040Packages) pico-sdk pico-sdk-minimal picotool;
       };
     };
 }
