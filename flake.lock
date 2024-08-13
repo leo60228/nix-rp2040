@@ -1,12 +1,15 @@
 {
   "nodes": {
     "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
       "locked": {
-        "lastModified": 1631561581,
-        "narHash": "sha256-3VQMV5zvxaVLvqqUrNz3iJelLw30mIVSfZmAaauM3dA=",
+        "lastModified": 1710146030,
+        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "7e5bf3925f6fbdfaf50a2a7ca0be2879c4261d19",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
         "type": "github"
       },
       "original": {
@@ -17,70 +20,36 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1634327140,
-        "narHash": "sha256-d5L7oMjUVC6VU0cQMsF0tceAPkmzuAQ51DWBFNChbEQ=",
+        "lastModified": 1723500064,
+        "narHash": "sha256-1TEXcmkghYtCZmhLmWfFUcWSdSZyRgVNcbds/CYch4w=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "83667ff60a88e22b76ef4b0bdf5334670b39c2b6",
+        "rev": "c6257345a8beba73ed93a9738a344b7157c00f5c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-21.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
-    "openocd": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1626277910,
-        "narHash": "sha256-9v2t4YbPjuROoxm9v8w4U+cmf09y8L5lM7w7nqEx1/4=",
-        "ref": "master+swd+rp2040+picoprobe",
-        "rev": "0628da71e112cd5fed0659590ddd54ed1df23a98",
-        "shallow": true,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/raspberrypi/openocd.git"
+    "nixpkgs-unfree": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
-      "original": {
-        "ref": "master+swd+rp2040+picoprobe",
-        "shallow": true,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/raspberrypi/openocd.git"
-      }
-    },
-    "pico-sdk": {
-      "flake": false,
       "locked": {
-        "lastModified": 1634243728,
-        "narHash": "sha256-tjnwHSl50W/H++yyHANRaDz/YwATGBJ4Ro+6sZZdDZ0=",
-        "owner": "raspberrypi",
-        "repo": "pico-sdk",
-        "rev": "68571ad33e42c8fcf39fadb0262a89556c1d0414",
+        "lastModified": 1723200601,
+        "narHash": "sha256-oSdsgUlS1PF8DJHDygD68MWR59j+bt+r4SSgMnQ5Gv0=",
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
+        "rev": "f6bbe7c3b0dfb485d8da637f3e5110b09d7aa5f7",
         "type": "github"
       },
       "original": {
-        "owner": "raspberrypi",
-        "ref": "develop",
-        "repo": "pico-sdk",
-        "type": "github"
-      }
-    },
-    "picotool": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1624548475,
-        "narHash": "sha256-/gXR9HGcQ7PvgzBFdkJpuj9wC9Vk2BZ5m/iVHZbDCUk=",
-        "owner": "raspberrypi",
-        "repo": "picotool",
-        "rev": "62873e14e8a4ef3608635077be4c04b4e2fdf50f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "raspberrypi",
-        "repo": "picotool",
+        "owner": "numtide",
+        "repo": "nixpkgs-unfree",
         "type": "github"
       }
     },
@@ -88,26 +57,21 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
-        "openocd": "openocd",
-        "pico-sdk": "pico-sdk",
-        "picotool": "picotool",
-        "tinyusb": "tinyusb"
+        "nixpkgs-unfree": "nixpkgs-unfree"
       }
     },
-    "tinyusb": {
-      "flake": false,
+    "systems": {
       "locked": {
-        "lastModified": 1622657787,
-        "narHash": "sha256-yRu6pUb1bCLrr9vh1/gw0DrUIktVX2j3WRtR2XhOL2s=",
-        "owner": "hathach",
-        "repo": "tinyusb",
-        "rev": "d49938d0f5052bce70e55c652b657c0a6a7e84fe",
+        "lastModified": 1681028828,
+        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
         "type": "github"
       },
       "original": {
-        "owner": "hathach",
-        "repo": "tinyusb",
-        "rev": "d49938d0f5052bce70e55c652b657c0a6a7e84fe",
+        "owner": "nix-systems",
+        "repo": "default",
         "type": "github"
       }
     }
